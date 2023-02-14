@@ -1,0 +1,59 @@
+/* External Style Sheet */
+
+/* Make all font on webpage Arial */
+body{
+	font-family: Arial;
+}
+
+/* Center the headers */
+h1, h3{
+	text-align: center;
+}
+
+/* Add frame for visualizations */
+#frame {
+	width: 300px;
+	height: 300px;
+}
+
+/* Add margins to row for better formatting */
+.row {
+	margin: 75px;
+}
+
+/* Make column 1 take up 60% of the width */
+.column1 {
+	width: 60%;
+  	float: left;
+  	min-height: 400px;
+  	margin-top: 50px;
+}
+
+/* Make column two take up 40% of the width */
+.column2 {
+	width: 40%;
+  	float: right;
+  	min-height: 400px;
+  	margin-top: 50px;
+}
+
+/* make points blue */
+circle {
+	fill: blue;
+}
+
+/* Hightlight point when hover */
+circle:hover {
+	fill: greenyellow;
+}
+
+/* Make a border for point to toggle */
+.addborder{
+	stroke-width: 5px;
+	stroke: red;
+}
+
+/* Make line more visible */
+line {
+	stroke-width: 10px;
+}
