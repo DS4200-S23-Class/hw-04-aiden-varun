@@ -15,6 +15,44 @@ function lastPoint(select) {
 
 }
 
+function addPointClick() {
+
+	// get dropdowns by ID
+	let xDrop = document.getElementById("xDropdown");
+	let yDrop = document.getElementById("yDropdown");
+
+	// get text from dropdown selection
+	let x = xDrop.options[xDrop.selectedIndex].text;
+	let y = yDrop.options[yDrop.selectedIndex].text;
+
+	// convert y coordinate graph coordinate by subtracting from 10
+	let yConverted = String(10 - Number(y));
+
+	// convert coordinates to percentages to plot
+	let xPercent = x + "0%";
+	yPercent = yConverted + "0%";
+
+	// get frame from ID and add circle
+	let frame = document.getElementById("frame");
+	let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle")
+
+	// add attributes
+	circle.setAttribute('cx', xPercent);
+	circle.setAttribute('cy', yPercent);
+	circle.setAttribute('r', 10);
+	circle.setAttribute("class", "point");
+	circle.setAttribute("point", "("+x+","+y+")");
+	
+	// add click event listeners
+	circle.addEventListener("click", () => lastPoint(circle));
+	circle.addEventListener("click", () => addborder(circle));
+	
+	frame.appendChild(circle);
+}
+
+document.getElementById("addPoint").addEventListener("click", addPointClick);
+
+
 // Create array of every point on graph
 circles = Array.from(document.getElementsByClassName('circ'))
 
